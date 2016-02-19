@@ -35,6 +35,10 @@ td.icon-star {
   color: #C7C7C7;
 }
 
+tr td.css-td-twitter, tr td.css-td-letter, tr td.css-td-phone {
+  padding: 0;
+}
+
 @media screen and (max-width: 568px) {
   .css-td-twitter, .css-td-letter {
     display: none;
