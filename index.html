@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF8"/>
+    <meta name="author"  content="Jose Arias"/>
+    <title>Address Book</title>
+    <link rel="stylesheet" href="css/fontello.css"/>
+    <link rel="stylesheet" href="css/stylesheet.css"/>
+    <link type="image/x-icon" href="images/logo.png" rel="icon" />
+    <link type="image/x-icon" href="images/logo.png" rel="shortcut icon" />
+
+    <script id="contactsTemplate" type="text/x-handlbars-template">
+      <tr class="js-ctn-{{ id }}">
+        <td>
+          <img class="js-img-{{ id }}" src="images/img.png" alt="User profile"/>
+        </td>
+        <td class="tbl-names js-open-popup" id="{{ id }}">&nbsp;{{ names }}</td>
+        <td class="css-td-twitter"><span class="icon-twitter"></span>&nbsp;{{ twitter }}</td>
+        <td class="css-td-letter"><span class="icon-letter"></span> &nbsp;{{ email }}</td>
+        <td><span class="icon-phone"></span>&nbsp;{{ phone }}</td>
+        <td class="js-star-{{ id }} icon-star"></td>
+      </tr>
+    </script>
+
+  </head>
+  <body>
+    <header class="m-hd">
+      <h1 class="m-hd__title">Koombea Contacts</h1>
+        <input id="menu" type="checkbox"/>
+        <label class="m-hd__menu icon-search" for="menu"></label>
+      <div class="m-hd__ctn-search"><input class="m-hd__search" type="search" placeholder="Search..." title="Search contact"/></div>
+    </header>
+
+    <main class="m-mn">
+      <div id="contFavoritesID" class="m-mn-ctn">
+        <section class="m-mn__sct-contacts">
+          <h1 class="m-mn-sct-contacts__title">Favorites <span class="m-mn-sct-contacts__cont-title" id="contFavorites">(0)</span></h1>
+          <table id="favoritesID" class="m-mn-sct-contacts__content">
+
+          </table>
+        </section>
+      </div>
+
+      <div class="m-mn-ctn">
+        <section class="m-mn__sct-contacts">
+          <h1 class="m-mn-sct-contacts__title">All <span class="m-mn-sct-contacts__cont-title" id="contAll">(0)</span></h1>
+          <table id="allID" class="m-mn-sct-contacts__content">
+
+          </table>
+        </section>
+      </div>
+      <button class="m-mn__btn-add js-open-popup icon-add" id="AddNewContact" type="button" name="button" title="Add new contact"></button>
+    </main>
+
+    <div class="m-popup" id="mainPopup"> <!-- Start div.m-popup -->
+      <div class="m-popup-ctn">
+        <div>
+          <div class="m-popup-sub-ctn sb-left">
+          <img class="m-popup__img" id="imgProfile" src="images/new-user.png" alt=""/>
+          <p class="m-popup__txt">New contact</p>
+          <button class="m-popup__btn" type="button" id="AddFavorites" name="AddFavorites"><span class="icon-add-contact"></span> Add to favorites</button>
+        </div>
+
+        <div class="m-popup-sub-ctn sb-right">
+          <span class="m-popup__exit icon-close" title="Exit (Esc)"></span>
+          <form class="m-popup__form" action="index.html" method="post">
+
+            <div class="m-popup-form__ctn">
+              <h2 class="m-popup-form__title">Contact</h2>
+              <div class="m-popup-form-sub-ctn">
+                <label for="nameContact">Name:</label>
+                <input maxlength="15" type="text" id="nameContact" name="nameContact"/>
+              </div>
+
+              <div class="m-popup-form-sub-ctn">
+                <label for="twitterContact">Twitter:</label>
+                <input maxlength="15" type="text" id="twitterContact" name="twitterContact"/>
+              </div>
+
+              <div class="m-popup-form-sub-ctn">
+                <label for="emailContact">E-mail:</label>
+                <input maxlength="15" type="text" id="emailContact" name="emailContact"/>
+              </div>
+
+              <div class="m-popup-form-sub-ctn">
+                <label for="phoneContact">Phone:</label>
+                <input maxlength="15" type="text" id="phoneContact" name="phoneContact"/>
+              </div>
+            </div>
+
+            <div class="m-popup-form__ctn2">
+            <button class="m-popup__btn" type="button" id="delete" name="delete"><span class="icon-delete"></span>Delete</button>
+            <button class="m-popup__btn" type="button" id="save" name="save"><span class="icon-save"></span>Save</button>
+            </div>
+          </form>
+        </div>
+        </div>
+      </div>
+    </div> <!-- End div.m-popup -->
+
+    <footer class="m-ft">
+      <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+      <script type="text/javascript" src="js/handlebars-v4.0.5.js"></script>
+      <script type="text/javascript" src="js/javascript.js"></script>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,48 @@
+.m-mn-sct-contacts__content {
+  background-color: #ffffff;
+  border: 1px solid #E5E5E5;
+  border-collapse: collapse;
+  border-radius: 5px;
+  box-shadow: 0 3px 4px rgba(0, 0, 0, 0.5);
+  color: #444444;
+  width: 100%;
+}
+
+.m-mn-sct-contacts__content td {
+  border-bottom: 1px solid #E5E5E5;
+  padding: 7px 10px;
+}
+
+.m-mn-sct-contacts__content img {
+  height: 30px;
+  width: 30px;
+}
+
+td span.icon-twitter {
+  color: #55ACEE;
+}
+
+td span.icon-letter, td span.icon-phone, td span.icon-star {
+  color: #B6B6B6;
+}
+
+.tbl-names:hover {
+  color: #F4511E;
+  text-decoration: underline;
+}
+
+td.icon-star {
+  color: #C7C7C7;
+}
+
+@media screen and (max-width: 568px) {
+  .css-td-twitter, .css-td-letter {
+    display: none;
+  } 
+}
+
+@media screen and (max-width: 726px) {
+  .css-td-twitter {
+    display: none;
+  }
+}
